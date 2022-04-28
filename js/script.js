@@ -29,4 +29,23 @@ const team = [
       role: 'Graphic Designer',
       image: 'barbara-ramos-graphic-designer.jpg',
     },
-  ];
+];
+
+//milestone 1 -> stampare in console nome - ruolo - stringa foto
+const TeamMemberKeyName = "name";
+const TeamMemebrKeyRole = "role";
+const TeamMemberKeyImage = "image";
+
+for (let i = 0; i < team.length; i++) {
+    const teamMemberObject = team[i];
+    console.log(teamMemberObject);
+    for (let key in teamMemberObject) {
+        console.log(teamMemberObject[key]);
+    }
+}
+
+
+
+// for (let key in team) {
+//     console.log(team[key]);
+// }

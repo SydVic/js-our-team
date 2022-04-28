@@ -33,15 +33,25 @@ const team = [
 
 //milestone 1 -> stampare in console nome - ruolo - stringa foto
 const TeamMemberKeyName = "name";
-const TeamMemebrKeyRole = "role";
+const TeamMemberKeyRole = "role";
 const TeamMemberKeyImage = "image";
 
 for (let i = 0; i < team.length; i++) {
     const teamMemberObject = team[i];
-    console.log(teamMemberObject);
+    //console.log(teamMemberObject);
     
-    console.log("name", teamMemberObject[TeamMemberKeyName]);
-    console.log("role", teamMemberObject[TeamMemebrKeyRole]);
-    console.log("image", teamMemberObject[TeamMemberKeyImage]);
-    
+    // console.log("name", teamMemberObject[TeamMemberKeyName]);
+    // console.log("role", teamMemberObject[TeamMemeberKeyRole]);
+    // console.log("image", teamMemberObject[TeamMemberKeyImage]);
+
+    // milestone 2 -> stampare le informazioni in DOM come stringa
+    const TeamMemberName = teamMemberObject[TeamMemberKeyName];
+    const TeamMemberRole = teamMemberObject[TeamMemberKeyRole];
+    const TeamMemberImage = teamMemberObject[TeamMemberKeyImage];
+
+    const infoContainer = document.getElementById("info-container");
+    const memberInfo = document.createElement("div");
+    memberInfo.innerHTML = `${TeamMemberName} ${TeamMemberRole} ${TeamMemberImage}`;
+    infoContainer.appendChild(memberInfo);
 }
+

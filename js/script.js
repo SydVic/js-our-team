@@ -51,7 +51,7 @@ for (let i = 0; i < team.length; i++) {
 
   // const teamContainer = document.getElementsByClassName("team-container");
   // prelevo il container
-  const teamContainer = document.getElementById("team-container");
+  const teamContainer = document.getElementById("my-team-container");
   console.log("teamContainer", teamContainer);
 
   // creo la card per contenere immagine e testo
@@ -66,9 +66,18 @@ for (let i = 0; i < team.length; i++) {
   cardImage.innerHTML = `<img src="img/${TeamMemberImage}" alt="${TeamMemberName}">`;
   teamCard.appendChild(cardImage);
 
+  // aggiungo il testo
   const cardText = document.createElement("div");
   cardText.classList.add("card-text");
   cardText.innerHTML = `<h3>${TeamMemberName}</h3>`;
   cardText.innerHTML += `<p>${TeamMemberRole}</p>`;
   teamCard.appendChild(cardText);
 }
+
+// BONUS 3 -> qundo viene cliccato il pulsante add si crea un nuovo oggetto (utilizzando gli input immessi dall'utente attraverso il form) che verrà poi utilizzato per stampare una nuova card con le informazioni ricevute
+
+// al click
+  // raccogliere input immessi dall'utente
+  // creare un nuovo oggetto con questi input
+  // pusharlo nell'array contenente gli altri membri del team
+  // utilizzare igli input per stampare una nuova scheda (racchiudere il codice per creare la card in una funzione cosi da poterla richiamare?)

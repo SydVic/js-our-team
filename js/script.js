@@ -75,9 +75,21 @@ for (let i = 0; i < team.length; i++) {
 }
 
 // BONUS 3 -> qundo viene cliccato il pulsante add si crea un nuovo oggetto (utilizzando gli input immessi dall'utente attraverso il form) che verrà poi utilizzato per stampare una nuova card con le informazioni ricevute
+const addMemberBtn = document.getElementById("addMemberButton");
+addMemberBtn.addEventListener("click", function(){
+  const newMemberName = document.getElementById("name").value;
+  console.log("newMemberName", newMemberName);
 
+  const newMemberRole = document.getElementById("role").value;
+  console.log("newMemberRole", newMemberRole);
+
+  const newMemberImage = document.getElementById("image").value;
+  console.log("newMemberImage", newMemberImage);
+})
 // al click
-  // raccogliere input immessi dall'utente
+  // raccogliere input immessi dall'utente (fare funzione anche qui?)
   // creare un nuovo oggetto con questi input
   // pusharlo nell'array contenente gli altri membri del team
-  // utilizzare igli input per stampare una nuova scheda (racchiudere il codice per creare la card in una funzione cosi da poterla richiamare?)
+  // utilizzare gli input per stampare una nuova scheda (racchiudere il codice per creare la card in una funzione cosi da poterla richiamare?)
+
+  // e poi ripulire campi per evitare aggiunte molteplici

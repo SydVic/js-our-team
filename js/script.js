@@ -51,7 +51,7 @@ for (let i = 0; i < team.length; i++) {
 
     const infoContainer = document.getElementById("info-container");
     const memberInfo = document.createElement("div");
-    memberInfo.innerHTML = `${TeamMemberName} ${TeamMemberRole} ${TeamMemberImage}`;
+    memberInfo.innerHTML = `${TeamMemberName} ${TeamMemberRole} `;
+    memberInfo.innerHTML += `<img src="img/${TeamMemberImage}" alt="${TeamMemberName}">`;
     infoContainer.appendChild(memberInfo);
 }
-

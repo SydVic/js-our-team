@@ -37,21 +37,38 @@ const TeamMemberKeyRole = "role";
 const TeamMemberKeyImage = "image";
 
 for (let i = 0; i < team.length; i++) {
-    const teamMemberObject = team[i];
-    //console.log(teamMemberObject);
+  const teamMemberObject = team[i];
+  //console.log(teamMemberObject);
     
-    // console.log("name", teamMemberObject[TeamMemberKeyName]);
-    // console.log("role", teamMemberObject[TeamMemeberKeyRole]);
-    // console.log("image", teamMemberObject[TeamMemberKeyImage]);
+  // console.log("name", teamMemberObject[TeamMemberKeyName]);
+  // console.log("role", teamMemberObject[TeamMemeberKeyRole]);
+  // console.log("image", teamMemberObject[TeamMemberKeyImage]);
 
-    // milestone 2 -> stampare le informazioni in DOM come stringa
-    const TeamMemberName = teamMemberObject[TeamMemberKeyName];
-    const TeamMemberRole = teamMemberObject[TeamMemberKeyRole];
-    const TeamMemberImage = teamMemberObject[TeamMemberKeyImage];
+  // milestone 2 -> stampare le informazioni in DOM come stringa
+  const TeamMemberName = teamMemberObject[TeamMemberKeyName];
+  const TeamMemberRole = teamMemberObject[TeamMemberKeyRole];
+  const TeamMemberImage = teamMemberObject[TeamMemberKeyImage];
 
-    const infoContainer = document.getElementById("info-container");
-    const memberInfo = document.createElement("div");
-    memberInfo.innerHTML = `${TeamMemberName} ${TeamMemberRole} `;
-    memberInfo.innerHTML += `<img src="img/${TeamMemberImage}" alt="${TeamMemberName}">`;
-    infoContainer.appendChild(memberInfo);
+  // const teamContainer = document.getElementsByClassName("team-container");
+  // prelevo il container
+  const teamContainer = document.getElementById("team-container");
+  console.log("teamContainer", teamContainer);
+
+  // creo la card per contenere immagine e testo
+  const teamCard = document.createElement("div");
+  teamCard.classList.add("team-card");
+  console.log("teamCard", teamCard);
+  teamContainer.appendChild(teamCard);
+  
+  // aggiungo l'immagine
+  const cardImage = document.createElement("div");
+  cardImage.classList.add("card-image");
+  cardImage.innerHTML = `<img src="img/${TeamMemberImage}" alt="${TeamMemberName}">`;
+  teamCard.appendChild(cardImage);
+
+  const cardText = document.createElement("div");
+  cardText.classList.add("card-text");
+  cardText.innerHTML = `<h3>${TeamMemberName}</h3>`;
+  cardText.innerHTML += `<p>${TeamMemberRole}</p>`;
+  teamCard.appendChild(cardText);
 }

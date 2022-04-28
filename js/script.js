@@ -39,13 +39,9 @@ const TeamMemberKeyImage = "image";
 for (let i = 0; i < team.length; i++) {
     const teamMemberObject = team[i];
     console.log(teamMemberObject);
-    for (let key in teamMemberObject) {
-        console.log(teamMemberObject[key]);
-    }
+    
+    console.log("name", teamMemberObject[TeamMemberKeyName]);
+    console.log("role", teamMemberObject[TeamMemebrKeyRole]);
+    console.log("image", teamMemberObject[TeamMemberKeyImage]);
+    
 }
-
-
-
-// for (let key in team) {
-//     console.log(team[key]);
-// }

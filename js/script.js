@@ -77,6 +77,7 @@ for (let i = 0; i < team.length; i++) {
 // BONUS 3 -> qundo viene cliccato il pulsante add si crea un nuovo oggetto (utilizzando gli input immessi dall'utente attraverso il form) che verrà poi utilizzato per stampare una nuova card con le informazioni ricevute
 const addMemberBtn = document.getElementById("addMemberButton");
 addMemberBtn.addEventListener("click", function(){
+
   const newMemberName = document.getElementById("name").value;
   console.log("newMemberName", newMemberName);
 
@@ -85,6 +86,15 @@ addMemberBtn.addEventListener("click", function(){
 
   const newMemberImage = document.getElementById("image").value;
   console.log("newMemberImage", newMemberImage);
+
+  const newMemberObject = {
+    name : newMemberName,
+    role : newMemberRole,
+    image: newMemberImage
+  }
+
+  team.push(newMemberObject);
+  console.log("newMemberObject", newMemberObject);
 })
 // al click
   // raccogliere input immessi dall'utente (fare funzione anche qui?)

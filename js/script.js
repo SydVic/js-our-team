@@ -75,8 +75,8 @@ for (let i = 0; i < team.length; i++) {
 }
 
 // BONUS 3 -> qundo viene cliccato il pulsante add si crea un nuovo oggetto (utilizzando gli input immessi dall'utente attraverso il form) che verrà poi utilizzato per stampare una nuova card con le informazioni ricevute
-const addMemberBtn = document.getElementById("addMemberButton");
-addMemberBtn.addEventListener("click", function(){
+const addNewMemberBtn = document.getElementById("addMemberButton");
+addNewMemberBtn.addEventListener("click", function(){
 
   const newMemberName = document.getElementById("name").value;
   console.log("newMemberName", newMemberName);
@@ -92,9 +92,34 @@ addMemberBtn.addEventListener("click", function(){
     role : newMemberRole,
     image: newMemberImage
   }
+  console.log("newMemberObject", newMemberObject);
 
   team.push(newMemberObject);
-  console.log("newMemberObject", newMemberObject);
+
+
+
+
+  ///////////////////////////// da racchiudere in funzione /////////////////////////////
+  const teamContainer = document.getElementById("my-team-container");
+  console.log("teamContainer", teamContainer);
+
+  const teamCard = document.createElement("div");
+  teamCard.classList.add("team-card");
+  console.log("teamCard", teamCard);
+  teamContainer.appendChild(teamCard);
+  
+  const cardImage = document.createElement("div");
+  cardImage.classList.add("card-image");
+  cardImage.innerHTML = `<img src="img/${newMemberImage}" alt="${newMemberName}">`;
+  teamCard.appendChild(cardImage);
+
+  const cardText = document.createElement("div");
+  cardText.classList.add("card-text");
+  cardText.innerHTML = `<h3>${newMemberName}</h3>`;
+  cardText.innerHTML += `<p>${newMemberRole}</p>`;
+  teamCard.appendChild(cardText);
+  ///////////////////////////// da racchiudere in funzione /////////////////////////////
+
 })
 // al click
   // raccogliere input immessi dall'utente (fare funzione anche qui?)
